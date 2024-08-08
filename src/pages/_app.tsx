@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app';
 import Layout from '../components/layout';
 import { CssBaseline } from '@mui/material';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <CssBaseline />
@@ -13,4 +13,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default App;
