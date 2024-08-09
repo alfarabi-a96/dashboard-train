@@ -1,15 +1,13 @@
 import type { AppProps } from 'next/app';
-import Layout from '../components/layout';
 import { CssBaseline } from '@mui/material';
+import { SidebarProvider } from '@/context/sidebar-context';
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <SidebarProvider>
       <CssBaseline />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </>
+      <Component {...pageProps} />
+    </SidebarProvider>
   );
 }
 

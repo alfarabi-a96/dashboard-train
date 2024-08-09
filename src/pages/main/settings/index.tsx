@@ -1,11 +1,12 @@
+import Layout from '@/components/layout';
 import React from 'react';
 
 const Settings: React.FC = () => {
   return (
-    <div>
+    <Layout>
       <h1>Settings</h1>
       <p>Manage your settings here.</p>
-    </div>
+    </Layout>
   );
 };
 

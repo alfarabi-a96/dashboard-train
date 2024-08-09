@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tabs, Tab, Box } from '@mui/material';
+import Layout from '@/components/layout';
 
 const Dashboard: React.FC = () => {
   const [tabIndex, setTabIndex] = React.useState(0);
@@ -9,7 +10,7 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div>
+    <Layout>
       <h1>Dashboard</h1>
       <Box sx={{ width: '100%' }}>
         <Tabs value={tabIndex} onChange={handleTabChange} aria-label="dashboard tabs">
@@ -23,7 +24,7 @@ const Dashboard: React.FC = () => {
           {tabIndex === 2 && <div>Reports Content</div>}
         </Box>
       </Box>
-    </div>
+    </Layout>
   );
 };
 

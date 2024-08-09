@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { List, ListItem, ListItemIcon, ListItemText, IconButton, Divider } from '@mui/material';
-import { Menu, ChevronLeft, ChevronRight, Dashboard as DashboardIcon, Settings as SettingsIcon } from '@mui/icons-material';
+import { ChevronLeft, ChevronRight, Dashboard as DashboardIcon, Settings as SettingsIcon } from '@mui/icons-material';
 import Link from 'next/link';
+import { useSidebar } from '@/context/sidebar-context';
 
-const Sidebar: React.FC = () => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
-  const handleToggle = () => {
-    setIsCollapsed(!isCollapsed);
-  };
+const Sidebar = () => {
+  const { open, toggleSidebar } = useSidebar();
 
   return (
     <div style={{
-      width: isCollapsed ? 80 : 250,
+      width: open ? 250 : 80,
       backgroundColor: '#f4f4f4',
       height: '100vh',
       padding: 16,
@@ -20,29 +17,29 @@ const Sidebar: React.FC = () => {
       position: 'relative',
     }}>
       <IconButton
-        onClick={handleToggle}
+        onClick={toggleSidebar}
         style={{
           position: 'absolute',
           top: 16,
-          right: isCollapsed ? -30 : 0,
+          right: open ? 0 : -30,
           transition: 'right 0.3s',
         }}
       >
-        {isCollapsed ? <ChevronRight /> : <ChevronLeft />}
+        {open ? <ChevronLeft /> : <ChevronRight />}
       </IconButton>
       <Divider />
       <List>
-        <ListItem button component={Link} href="/dashboard">
+        <ListItem button component={Link} href="/main/dashboard">
           <ListItemIcon>
             <DashboardIcon />
           </ListItemIcon>
-          <ListItemText primary={isCollapsed ? '' : 'Dashboard'} />
+          <ListItemText primary={open ? 'Dashboard' : ''} />
         </ListItem>
-        <ListItem button component={Link} href="/settings">
+        <ListItem button component={Link} href="/main/settings">
           <ListItemIcon>
             <SettingsIcon />
           </ListItemIcon>
-          <ListItemText primary={isCollapsed ? '' : 'Settings'} />
+          <ListItemText primary={open ? 'Settings' : ''} />
         </ListItem>
       </List>
     </div>
