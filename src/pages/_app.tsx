@@ -1,6 +1,6 @@
-import type { AppProps } from 'next/app';
-import { CssBaseline } from '@mui/material';
-import { SidebarProvider } from '@/context/sidebar-context';
+import type { AppProps } from 'next/app'
+import { CssBaseline } from '@mui/material'
+import { SidebarProvider } from '@/helper/context/sidebar-context'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -8,7 +8,7 @@ function App({ Component, pageProps }: AppProps) {
       <CssBaseline />
       <Component {...pageProps} />
     </SidebarProvider>
-  );
+  )
 }
 
-export default App;
+export default App

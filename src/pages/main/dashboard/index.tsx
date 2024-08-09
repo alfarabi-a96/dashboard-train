@@ -1,13 +1,13 @@
-import React from 'react';
-import { Tabs, Tab, Box } from '@mui/material';
-import Layout from '@/components/layout';
+import React from 'react'
+import { Tabs, Tab, Box } from '@mui/material'
+import Layout from '@/components/layout'
 
 const Dashboard: React.FC = () => {
-  const [tabIndex, setTabIndex] = React.useState(0);
+  const [tabIndex, setTabIndex] = React.useState(0)
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
-    setTabIndex(newValue);
-  };
+    setTabIndex(newValue)
+  }
 
   return (
     <Layout>
@@ -25,7 +25,7 @@ const Dashboard: React.FC = () => {
         </Box>
       </Box>
     </Layout>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard

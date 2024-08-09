@@ -1,11 +1,11 @@
-import React from 'react';
-import { List, ListItem, ListItemIcon, ListItemText, IconButton, Divider } from '@mui/material';
-import { ChevronLeft, ChevronRight, Dashboard as DashboardIcon, Settings as SettingsIcon } from '@mui/icons-material';
-import Link from 'next/link';
-import { useSidebar } from '@/context/sidebar-context';
+import React from 'react'
+import { List, ListItem, ListItemIcon, ListItemText, IconButton, Divider } from '@mui/material'
+import { ChevronLeft, ChevronRight, Dashboard as DashboardIcon, Home, Settings as SettingsIcon } from '@mui/icons-material'
+import Link from 'next/link'
+import { useSidebar } from '@/helper/context/sidebar-context'
 
 const Sidebar = () => {
-  const { open, toggleSidebar } = useSidebar();
+  const { open, toggleSidebar } = useSidebar()
 
   return (
     <div style={{
@@ -21,7 +21,7 @@ const Sidebar = () => {
         style={{
           position: 'absolute',
           top: 16,
-          right: open ? 0 : -30,
+          right: open ? -20 : -30,
           transition: 'right 0.3s',
         }}
       >
@@ -41,9 +41,15 @@ const Sidebar = () => {
           </ListItemIcon>
           <ListItemText primary={open ? 'Settings' : ''} />
         </ListItem>
+        <ListItem button component={Link} href="/home" style={{ marginTop: '75vh' }}>
+          <ListItemIcon>
+            <Home />
+          </ListItemIcon>
+          <ListItemText primary={open ? 'Home' : ''} />
+        </ListItem>
       </List>
     </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

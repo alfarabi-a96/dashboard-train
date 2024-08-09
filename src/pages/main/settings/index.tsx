@@ -1,5 +1,5 @@
-import Layout from '@/components/layout';
-import React from 'react';
+import Layout from '@/components/layout'
+import React from 'react'
 
 const Settings: React.FC = () => {
   return (
@@ -7,7 +7,7 @@ const Settings: React.FC = () => {
       <h1>Settings</h1>
       <p>Manage your settings here.</p>
     </Layout>
-  );
-};
+  )
+}
 
-export default Settings;
+export default Settings
